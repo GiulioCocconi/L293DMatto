@@ -15,7 +15,7 @@ class L293DMatto {
     int positivo;
     int negativo;
     int vel;
-    int dir
+    bool dir;
 };
 
 #endif
