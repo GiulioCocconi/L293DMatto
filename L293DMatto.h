@@ -5,15 +5,15 @@
 
 class L293DMatto {
   public:
-    L293DMatto(int enable, int positivo, int negativo);
+    L293DMatto(int enable, int dirA, int dirB);
     void setVel(int vel);
     void setDir(bool dir);
     int getVel();
     bool getDir();
   private:
     int enable;
-    int positivo;
-    int negativo;
+    int dirA;
+    int dirB;
     int vel;
     bool dir;
 };
