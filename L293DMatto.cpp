@@ -17,6 +17,12 @@ void L293DMatto::setDir(bool dir) {
   digitalWrite(dirB, !dir);
 }
 
+void L293DMatto::setDir(int dir) {
+  this->dir = (dir >= 0);
+  digitalWrite(dirA, this->dir);
+  digitalWrite(dirB, !(this->dir));
+}
+
 bool L293DMatto::getDir() {
   return this->dir;
 }
