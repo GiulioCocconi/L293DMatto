@@ -8,7 +8,8 @@ class L293DMatto {
     L293DMatto(int enable, int dirA, int dirB);
     void setVel(int vel);
     void setDir(bool dir);
-    int setDir(int dir);
+    void setDir(int dir);
+    void setAll(int veldir);
     int getVel();
     bool getDir();
   private:
