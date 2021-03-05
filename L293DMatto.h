@@ -9,7 +9,6 @@ class L293DMatto {
     void setVel(int vel);
     void setDir(bool dir);
     void setDir(int dir);
-    void setAll(int veldir);
     void setVelPerc(int vel);
     int getVel();
     bool getDir();
