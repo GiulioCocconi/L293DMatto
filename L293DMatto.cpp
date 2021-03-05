@@ -30,11 +30,12 @@ void L293DMatto::setVel(int vel) {
   analogWrite(this->enable, vel);
 }
 
+void L293DMatto::setVelPerc(int vel) {
+  int newVel = map(vel, 0, 100, 0, 255);
+  this->setVel(newVel);
+}
+
 int L293DMatto::getVel() {
   return this->vel;
 }
 
-void L293DMatto::setAll(int velDir) {
-  this->setVel(abs(velDir));
-  this->setDir(velDir);
-}
