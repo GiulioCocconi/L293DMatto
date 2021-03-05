@@ -18,9 +18,7 @@ void L293DMatto::setDir(bool dir) {
 }
 
 void L293DMatto::setDir(int dir) {
-  this->dir = (dir >= 0);
-  digitalWrite(dirA, this->dir);
-  digitalWrite(dirB, !(this->dir));
+  this->setDir(dir >= 0);
 }
 
 bool L293DMatto::getDir() {
@@ -38,5 +36,5 @@ int L293DMatto::getVel() {
 
 void L293DMatto::setAll(int velDir) {
   this->setVel(abs(velDir));
-  this->setDir(veldir >= 0);
+  this->setDir(velDir);
 }
