@@ -26,8 +26,10 @@ bool L293DMatto::getDir() {
 }
 
 void L293DMatto::setVel(int vel) {
-  this->vel = vel;
-  analogWrite(this->enable, vel);
+  if (vel<=255 && vel>=0) {
+    this->vel = vel;
+    analogWrite(this->enable, vel);
+  }
 }
 
 void L293DMatto::setVelPerc(int vel) {
