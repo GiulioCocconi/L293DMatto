@@ -51,8 +51,8 @@ void L293DMatto::setVel(int vel) {
 }
 
 void L293DMatto::setVelPerc(int vel) {
-  vel = map(vel, 0, 100, this->min, 255);
-  this->setVelRaw(vel);
+  vel = map(vel, 0, 100, 0, 255);
+  this->setVel(vel);
 }
 
 int L293DMatto::getVel() {
