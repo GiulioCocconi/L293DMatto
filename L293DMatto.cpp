@@ -42,6 +42,10 @@ void L293DMatto::setVelRaw(int vel) {
 }
 
 void L293DMatto::setVel(int vel) {
+  if (vel == 0) {
+    this->setVelRaw(0);
+    return;
+  }
   vel = map(vel, 0, 255, this->min, 255);
   this->setVelRaw(vel);
 }
