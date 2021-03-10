@@ -26,7 +26,7 @@ bool L293DMatto::getDir() {
 }
 
 void L293DMatto::setVel(int vel) {
-  this->vel = vel
+  this->vel = vel;
   analogWrite(this->enable, vel);
 }
 
