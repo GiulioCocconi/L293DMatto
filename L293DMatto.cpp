@@ -8,7 +8,7 @@ L293DMatto::L293DMatto(int enable, int dirA, int dirB) {
   pinMode(dirA, OUTPUT);
   pinMode(dirB, OUTPUT);
   setDir(true);
-  setVel(127); //Metà della velocità massima
+  setVel(0);
 }
 
 void L293DMatto::setDir(bool dir) {
