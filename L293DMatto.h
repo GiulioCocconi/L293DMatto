@@ -6,7 +6,8 @@
 class L293DMatto {
   public:
     L293DMatto(int enable, int dirA, int dirB);
-    L293DMatto(int enable, int dirA, int dirB, int min);
+    L293DMatto(int enable, int pin);
+    void setMin(int min);
     void setVel(int vel);
     void setDir(bool dir);
     void setVelPerc(int vel);
@@ -14,6 +15,7 @@ class L293DMatto {
     int getVel();
     bool getDir();
   private:
+    void init(int enable, int dirA, int dirB);
     int enable;
     int dirA;
     int dirB;
