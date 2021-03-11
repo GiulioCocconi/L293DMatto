@@ -1,33 +1,41 @@
 #include "L293DMatto.h"
 
 L293DMatto::L293DMatto(int enable, int dirA, int dirB) {
+  this->init(enable, dirA, dirB);
+}
+
+
+L293DMatto::L293DMatto(int enable, int pin) {
+  this->init(enable, pin, -1);
+}
+
+
+void L293DMatto::init(int enable, int dirA, int dirB) {
   this->enable = enable;
   this->dirA = dirA;
   this->dirB = dirB;
   this->min = 0;
   pinMode(enable, OUTPUT);
   pinMode(dirA, OUTPUT);
-  pinMode(dirB, OUTPUT);
+  
+  if (dirB != -1) {
+    pinMode(dirB, OUTPUT);
+  }
+  
   setDir(true);
   setVel(0);
 }
 
-L293DMatto::L293DMatto(int enable, int dirA, int dirB, int min) {
-  this->enable = enable;
-  this->dirA = dirA;
-  this->dirB = dirB;
-  this->min = min;
-  pinMode(enable, OUTPUT);
-  pinMode(dirA, OUTPUT);
-  pinMode(dirB, OUTPUT);
-  setDir(true);
-  setVel(0);
+void L293DMatto::setMin(int min) {
+  this->min = min
 }
 
 void L293DMatto::setDir(bool dir) {
-  this->dir = dir;
-  digitalWrite(dirA, dir);
-  digitalWrite(dirB, !dir);
+  if (dirB != -1) {
+    this->dir = dir;
+    digitalWrite(dirA, dir);
+    digitalWrite(dirB, !dir);
+  }
 }
 
 bool L293DMatto::getDir() {
