@@ -6,9 +6,9 @@
 class L293DMatto {
   public:
     L293DMatto(int enable, int dirA, int dirB);
-    L293DMatto(int enable, int pin); //Motore unidirezionale, consente di controllare fino a 4 motori con un solo driver. dirB sarà settato a -1
+    L293DMatto(int enable, int pin); //Motore unidirezionale, consente di controllare fino a 4 motori con un solo driver.
     void setMin(int min); //Setta velocità minima
-    void setVel(int vel); //Setta la velocità tenendo conto del minimo in una funzione map
+    void setVel(int vel); //Setta la velocità tenendo conto del minimo
     void setDir(bool dir);
     void setVelPerc(int vel); //Setta la velocità in percentuale
     void setVelRaw(int vel); //Setta la velocità senza tenere conto del minimo
