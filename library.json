@@ -1,0 +1,13 @@
+{
+  "name": "L293DMatto",
+  "version": "Gestione Motore con L293D",
+  "description": "Gestione Motore con L293D",
+  "keywords": "",
+  "repository":
+  {
+    "type": "git",
+    "url": "Gestione Motore con L293D"
+  },
+  "frameworks": ["arduino"],
+  "platforms": "*"
+}
